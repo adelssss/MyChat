@@ -1,8 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
     const messageInput = document.getElementById('message-input');
     const messagesDiv = document.getElementById('messages');
     const chatForm = document.getElementById('chat-form');
-    const eventSource = new EventSource('/sse');// Establish a Server-Sent Events connection
+    const usernameInput = document.getElementById('username-input'); 
+    const eventSource = new EventSource('/sse'); 
 
     eventSource.onmessage = (event) => {
         const newMessage = document.createElement('div');
@@ -14,8 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const message = messageInput.value;
+        const username = usernameInput.value; 
 
-        fetch(`/chat?message=${encodeURIComponent(message)}`)
+        const formattedMessage = `${username}: ${message}`;
+
+        fetch(`/chat?message=${encodeURIComponent(formattedMessage)}`)
             .then(response => {
                 if (response.ok) {
                     messageInput.value = ''; 
