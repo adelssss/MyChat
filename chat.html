@@ -5,50 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyChat</title>
     <script src="chat.js" defer></script>
-    <style>
-        body {
-            background: linear-gradient(to right, purple, pink);
-            font-family: Arial, sans-serif; 
-            color: white; 
-            padding: 20px;
-            margin: 0; 
-        }
-        #messages {
-            border: 1px solid #ccc;
-            height: 300px;
-            overflow-y: auto;
-            margin-bottom: 10px;
-            background-color: rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; 
-            padding: 10px; 
-        }
-        form {
-            display: flex;
-        }
-        input[type="text"] {
-            flex: 1; 
-            padding: 10px; 
-            border: none; 
-            border-radius: 4px; 
-            margin-right: 10px; 
-        }
-        button {
-            padding: 10px 15px; 
-            background-color: white;
-            color: purple; 
-            border: none; 
-            border-radius: 4px; 
-            cursor: pointer; 
-        }
-        button:hover {
-            background-color: #f0f0f0; 
-        }
-    </style>
+    <link rel="stylesheet" href="chat.css"> 
 </head>
 <body>
     <h1>MyChat</h1>
     <div id="messages"></div>
     <form id="chat-form">
+        <input type="text" id="username-input" placeholder="Enter your name" required> 
         <input type="text" id="message-input" placeholder="Type a message" required>
         <button type="submit">Send</button>
     </form>
