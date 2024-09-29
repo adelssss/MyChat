@@ -24,4 +24,4 @@ To set up the application locally, follow these steps:
 -Type your message and hit the "Send" button;
 -Messages will appear in the chat window, and all connected clients will see them in real-time;
 # File Structure
-MyChat(mychat(chat.html, chat.css, chat.js) server.js, package.json, package-lock.json);
+MyChat(mychat(chat.html, chat.css, chat.js),server.js, package.json, package-lock.json);
